@@ -81,12 +81,13 @@ public class DriverLoader
 		return list;
 	}
 	
+	@SuppressWarnings("unchecked")
 	private List<String> findDrivers(DriverLocator locator, Dictionary<?,?> dict)
 	{
 		final List<String> list = new ArrayList<String>();
 		try
 		{
-			String[] ids = locator.findDrivers(dict);
+			String[] ids = locator.findDrivers((Dictionary<String, ?>) dict);
 			if (ids != null)
 			{
 				list.addAll(Arrays.asList(ids));
